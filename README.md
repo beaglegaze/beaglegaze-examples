@@ -202,15 +202,6 @@ Successfully called main method!
 Called main 10 times
 ```
 
-## 🏗️ Architecture
-
-beaglegaze uses a sophisticated architecture combining:
-
-- **Smart Contracts**: Ethereum-based payment and access control
-- **Async Processing**: Non-blocking fee collection with batching
-- **Multi-language SDKs**: Native integration for different platforms
-- **Real-time Monitoring**: Live tracking of usage and payments
-
 ## 📄 License
 
 This project is licensed under the LGPL v3 License - see the [LICENSE](LICENSE) file for details.
@@ -221,7 +212,7 @@ This project is licensed under the LGPL v3 License - see the [LICENSE](LICENSE) 
   <p>Built with ❤️ for the Web3 community</p>
   <p>
     <a href="#top">Back to Top</a> •
-    <a href="https://github.com/steffenboe/beaglegaze/issues">Report Bug</a> •
-    <a href="https://github.com/steffenboe/beaglegaze/issues">Request Feature</a>
+    <a href="https://github.com/beaglegaze/beaglegaze-java-sdk/issues">Report Bug</a> •
+    <a href="https://github.com/beaglegaze/beaglegaze-java-sdk/issues">Request Feature</a>
   </p>
 </div>
