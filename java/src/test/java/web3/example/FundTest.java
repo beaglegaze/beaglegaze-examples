@@ -23,7 +23,7 @@ public class FundTest {
                 credentials,
                 new DefaultGasProvider());
         org.web3j.protocol.core.methods.response.TransactionReceipt response = contract
-                .fund(BigInteger.valueOf(2000)).send();
+                .fund(BigInteger.valueOf(20000)).send();
         System.out.println("Transaction hash: " + response.getTransactionHash());
     }
 }

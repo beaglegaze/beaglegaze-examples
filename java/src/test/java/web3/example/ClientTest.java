@@ -23,11 +23,11 @@ public class ClientTest {
 
     @Test
     public void testMain() throws Exception {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 50; i++) {
             Main.main(new String[] {});
             System.out.println("Called main " + (i + 1) + " times");
             Thread.sleep(1000);    
         }
-        
+        Thread.sleep(3600);
     }
 }
