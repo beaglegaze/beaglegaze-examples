@@ -1,1 +1,2 @@
-beaglegaze
+# Install beaglegaze from local development
+-e ../../beaglegaze-python-sdk
