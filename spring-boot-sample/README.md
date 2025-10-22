@@ -1,7 +1,21 @@
 # Beaglegaze Spring Boot Sample
-Welcome to the Spring Boot Sample. This sample repository shows how to use the [beaglegaze-java-sdk](https://github.com/beaglegaze/beaglegaze-java-sdk) to monetize your Spring Boot App.
 
-## Setup
+Welcome to the Beaglegaze Spring Boot Sample! This demo shows how to integrate the [beaglegaze-java-sdk](https://github.com/beaglegaze/beaglegaze-java-sdk) into your Spring Boot application to enable Web3-based micropayments for API endpoints.
+
+## 🚀 Quick Start
+
+This sample demonstrates how to:
+- Add pay-per-call functionality to REST endpoints
+- Process micropayments through Ethereum smart contracts
+- Monitor account balances and funding status
+
+## 📋 Prerequisites
+
+- Java 16+
+- Maven 3.6+
+- Docker (for local Ethereum testnet)
+- Node.js and npm (for the web dashboard)
+- Browser with MetaMask extension
 
 ### Dependency Management
 Add the following dependencies to your `pom.xml`:
@@ -113,15 +127,18 @@ public class SampleRestController {
 }
 ```
 
-### Building
-Now, build the application:
+## 🔧 Building and Running
+
+### 1. Build the Application
+Build the application using Maven:
 
 ```bash
 mvn verify
 ```
-Before running the application, make sure your IDE did not rebuild it; earlier, we configured our Maven Build in a way to weave the `PayPerCall` aspect into your code; your IDE won't do this when building your app. 
 
-### Pre-Executing
+> **Important:** Make sure your IDE doesn't rebuild the application after Maven. The AspectJ plugin weaves the `PayPerCall` aspect into your code during the Maven build, which your IDE won't do automatically.
+
+### 2. Start the Ethereum Testnet
 Before running your app, spin up a local ethereum node. You can use the Beaglegaze Hardhat Testnet; there you will have the Beaglegaze Smart Contract already deployed at the address configured in this sample.
 
 ```bash
@@ -132,7 +149,7 @@ docker run -it -p 8545:8545 hardhat-testnet
 ```
 The private key configured in the `src/main/resources/application.properties` belongs to a prefunded account in the `hardhat-testnet`. Make sure to not use it in production in any way!
 
-### Starting the Server
+### 3. Start the Spring Boot Application
 Now you are ready to start the server:
 
 ```bash
@@ -167,6 +184,8 @@ java.lang.RuntimeException: Micro-payment processing is in error state, method e
 Beaglegaze successfully checked the client's missing account balance and intercepted the code execution!
 Next, let's use the Beaglegaze Web Dashboard to fund our account, unlocking beaglegaze again.
 
+## 💰 Funding Your Account
+
 ### Fund the Beaglegaze Contract
 Use the Beaglegaze Web Dashboard to fund the client account. For the next steps, you need a browser with MetaMask installed.
 
@@ -189,3 +208,26 @@ Alternatively, you can just send 2 ETH to the contract address. Make sure to use
 After funding, you should be able to call the `/hello` endpoint again.
 
 Congratulations, you successfully "payed" for using a piece of open-source software.
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+1. **AspectJ weaving not working**: Make sure to use `mvn verify` instead of your IDE's build system
+2. **Connection refused to localhost:8545**: Ensure the Hardhat testnet is running
+3. **Insufficient funds error**: Make sure you've funded your account through the web dashboard
+4. **MetaMask connection issues**: Verify you're connected to the correct network (localhost:8545)
+
+### Logs and Debugging
+
+To see detailed payment processing logs, check the Spring Boot application console output. Beaglegaze will log payment attempts, balance checks, and transaction results.
+
+## 📚 Additional Resources
+
+- [Beaglegaze Java SDK Documentation](https://github.com/beaglegaze/beaglegaze-java-sdk)
+- [Smart Contract Repository](https://github.com/beaglegaze/beaglegaze-contracts)
+- [Web Dashboard](https://github.com/beaglegaze/beaglegaze-web)
+
+## 🤝 Contributing
+
+Found an issue or want to contribute? Please open an issue or submit a pull request in the [main repository](https://github.com/beaglegaze/beaglegaze-examples).
