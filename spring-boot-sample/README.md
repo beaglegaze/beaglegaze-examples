@@ -167,9 +167,25 @@ java.lang.RuntimeException: Micro-payment processing is in error state, method e
 Beaglegaze successfully checked the client's missing account balance and intercepted the code execution!
 Next, let's use the Beaglegaze Web Dashboard to fund our account, unlocking beaglegaze again.
 
-### Funding
+### Fund the Beaglegaze Contract
 Use the Beaglegaze Web Dashboard to fund the client account. For the next steps, you need a browser with MetaMask installed.
 
 ```bash
-git clone 
+git clone git@github.com:beaglegaze/beaglegaze-web.git
+cd beaglegaze-web/
+npm run dev
 ```
+
+In your browser, connect Metamask to `localhost:8454` and import the wallet by providing the private key: `0xcccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc`.
+
+You should see a wallet with 1000 ETH in it.
+
+Open `http://localhost:3000` and connect your wallet.
+
+In the Web UI, add the `Beaglegaze` Contract by it's address `0x289B72CEeaB48832261626D62E3daA87Fd90B024`.
+
+Alternatively, you can just send 2 ETH to the contract address. Make sure to use the same wallet which private key is configured in your `application.properties`.
+
+After funding, you should be able to call the `/hello` endpoint again.
+
+Congratulations, you successfully "payed" for using a piece of open-source software.
